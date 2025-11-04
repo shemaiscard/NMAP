@@ -364,25 +364,31 @@ def app():
     # --- TAB 4: PRESENTATION SLIDES ---
     with tab4:
         st.subheader("Project Presentation 📽️")
-        st.info("Interactive project slide deck. Use the buttons or arrow keys to navigate.")
+        st.info("Click the button below to open the interactive slides in a new browser tab.")
 
-        # Define the path to the HTML file
-        presentation_file = "ppt.html"
+        # This URL path works because the file is in the 'static' folder
+        presentation_url = "/static/ppt.html"
         
-        try:
-            # Open and read the HTML file
-            with open(presentation_file, "r", encoding="utf-8") as f:
-                html_content = f.read()
-            
-            # Embed the HTML content using the components.html function
-            # We set a 16:9 aspect ratio height (e.g., 1280x720)
-            components.html(html_content, height=720, scrolling=False)
-            
-        except FileNotFoundError:
-            st.error(f"Error: '{presentation_file}' not found.")
-            st.warning("Please make sure the HTML file is in the same directory as the Python script.")
-        except Exception as e:
-            st.error(f"An unexpected error occurred while loading the presentation: {e}")
+        # Use st.markdown to create an HTML <a> tag styled as a button
+        st.markdown(
+            f'''
+            <a href="{presentation_url}" target="_blank">
+                <button style="
+                    background-color: #900C3F; 
+                    color: white; 
+                    border: none;
+                    border-radius: 8px;
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    cursor: pointer;
+                ">
+                     Open Presentation in New Tab
+                </button>
+            </a>
+            ''',
+            unsafe_allow_html=True
+        )
 
 if __name__ == '__main__':
     app()
