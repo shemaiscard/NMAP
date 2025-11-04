@@ -383,7 +383,7 @@ def app():
                     font-weight: bold;
                     cursor: pointer;
                 ">
-                     Open Presentation in New Tab
+                    Open Presentation in New Tab
                 </button>
             </a>
             ''',
