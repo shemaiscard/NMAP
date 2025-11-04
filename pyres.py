@@ -2,6 +2,7 @@ import streamlit as st
 import subprocess
 import re
 import time
+import streamlit.components.v1 as components 
 import random
 import os
 
@@ -227,7 +228,7 @@ def app():
     st.markdown("---")
 
     # --- TABBED LAYOUT ---
-    tab1, tab2, tab3 = st.tabs(["Nmap Scanner", "SSH Credential Audit (Mock)", "Documentation"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Nmap Scanner", "SSH Credential Audit (Mock)", "Documentation", "Presentation Slides"])
 
     # --- TAB 1: NMAP SCANNER ---
     with tab1:
@@ -358,6 +359,30 @@ def app():
         * **Logic:** The tool runs a simulation where it attempts to log in to the specified mock host/port using a small list of common passwords. The underlying function uses the structure of a real `paramiko` connection attempt but is *hardcoded to find a specific weak credential* for educational demonstration purposes.
         * **Key Takeaway:** If a service uses default or easily guessed credentials, it will be compromised quickly by automated tools.
         """)
+
+
+    # --- TAB 4: PRESENTATION SLIDES ---
+    with tab4:
+        st.subheader("Project Presentation 📽️")
+        st.info("Interactive project slide deck. Use the buttons or arrow keys to navigate.")
+
+        # Define the path to the HTML file
+        presentation_file = "ppt.html"
+        
+        try:
+            # Open and read the HTML file
+            with open(presentation_file, "r", encoding="utf-8") as f:
+                html_content = f.read()
+            
+            # Embed the HTML content using the components.html function
+            # We set a 16:9 aspect ratio height (e.g., 1280x720)
+            components.html(html_content, height=720, scrolling=False)
+            
+        except FileNotFoundError:
+            st.error(f"Error: '{presentation_file}' not found.")
+            st.warning("Please make sure the HTML file is in the same directory as the Python script.")
+        except Exception as e:
+            st.error(f"An unexpected error occurred while loading the presentation: {e}")
 
 if __name__ == '__main__':
     app()
