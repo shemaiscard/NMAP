@@ -367,11 +367,11 @@ def app():
         st.info("Click the button below to open the interactive slides in a new browser tab.")
 
         # This URL path works because the file is in the 'static' folder
-        presentation_url = "ppt.html"
+        presentation_file = "ppt.html"
         
         try:
             # Open and read the HTML file
-            with open(ppt.html, "r", encoding="utf-8") as f:
+            with open(presentation_file, "r", encoding="utf-8") as f:
                 html_content = f.read()
             
             st.download_button(
