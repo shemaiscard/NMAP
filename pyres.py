@@ -371,7 +371,7 @@ def app():
         
         try:
             # Open and read the HTML file
-            with open(presentation_file, "r", encoding="utf-8") as f:
+            with open(ppt.html, "r", encoding="utf-8") as f:
                 html_content = f.read()
             
             st.download_button(
