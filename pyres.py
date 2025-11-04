@@ -377,7 +377,7 @@ def app():
             st.download_button(
                 label="📥 Download Presentation ",
                 data=html_content,
-                file_name="sppt.html",
+                file_name="ppt.html",
                 mime="text/html"
             )
         except FileNotFoundError:
