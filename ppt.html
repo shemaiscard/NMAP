@@ -234,8 +234,8 @@
     <div class="presentation-container">
         <!-- Slide 1: Title -->
         <div class="slide slide-1 active">
-            <h1>🛡️ CypherAudit Toolkit</h1>
-            <div class="subtitle">Network Security Education Platform</div>
+            <h1>CypherAudit Toolkit using NMAP</h1>
+            <div class="subtitle">SHEMA GISCARD 2217151</div>
             <div class="tagline">"The only way to defend against a bad guy with a computer<br>is a good guy with a computer"</div>
             <div style="margin-top: 40px;">
                 <span class="tech-badge">Python</span>
@@ -248,12 +248,12 @@
         <!-- Slide 2: Overview -->
         <div class="slide">
             <div class="content">
-                <h2>📋 Project Overview</h2>
+                <h2> Project Overview</h2>
                 <ul>
                     <li><span class="highlight">Purpose:</span> Educational toolkit for Computer Science students to learn network reconnaissance and credential auditing</li>
                     <li><span class="highlight">Technology Stack:</span> Python 3, Streamlit web framework, Nmap security scanner, Paramiko SSH library</li>
                     <li><span class="highlight">Key Focus:</span> Hands-on learning of penetration testing fundamentals in a controlled, ethical environment</li>
-                    <li><span class="highlight">Design:</span> Dark-themed, cybersecurity-inspired UI with intuitive tabbed interface</li>
+                    <li><span class="highlight">Visual Design:</span>  Allows easy practical navigation and ensures an engaging graphical experience</li>
                 </ul>
             </div>
         </div>
@@ -261,23 +261,23 @@
         <!-- Slide 3: Features -->
         <div class="slide">
             <div class="content">
-                <h2>🔧 Core Features</h2>
+                <h2> Core Features</h2>
                 <div class="feature-grid">
                     <div class="feature-box">
-                        <h4>🔍 Nmap Scanner</h4>
+                        <h4> Nmap Scanner</h4>
                         <p>Network reconnaissance tool with two scan modes: Fast Scan (top 100 ports) and In-Depth Scan (ports 1-100) with service version detection</p>
                     </div>
                     <div class="feature-box">
-                        <h4>🗝️ SSH Credential Audit</h4>
+                        <h4> SSH Credential Audit</h4>
                         <p>Mock brute-force simulation demonstrating dictionary attacks against SSH services using weak credential pairs</p>
                     </div>
                     <div class="feature-box">
-                        <h4>📚 Documentation</h4>
+                        <h4> Documentation</h4>
                         <p>Comprehensive setup guide, usage instructions, and ethical guidelines for responsible security testing</p>
                     </div>
                     <div class="feature-box">
-                        <h4>🎨 Modern UI</h4>
-                        <p>Cybersecurity-themed dark interface with custom CSS styling, smooth animations, and clear visual feedback</p>
+                        <h4> Modern UI & Slides</h4>
+                        <p>A dark interface with custom CSS styling, smooth animations, and clear visual feedback </p>
                     </div>
                 </div>
             </div>
@@ -286,7 +286,7 @@
         <!-- Slide 4: Nmap Scanner -->
         <div class="slide">
             <div class="content">
-                <h2>🔎 Nmap Scanner Module</h2>
+                <h2> Nmap Scanner Module</h2>
                 <h3>Functionality:</h3>
                 <ul>
                     <li><span class="highlight">Fast Scan:</span> Quick reconnaissance of top 100 most common ports</li>
@@ -294,7 +294,7 @@
                     <li><span class="highlight">Service Detection:</span> Identifies running services and their versions for vulnerability assessment</li>
                 </ul>
                 <div class="warning">
-                    <strong>⚠️ Ethical Reminder:</strong> Only scan targets you own or have explicit permission to test. Requires sudo privileges for execution.
+                    <strong> Ethical Reminder:</strong> Only scan targets you own or have explicit permission to test. Requires sudo privileges for execution.
                 </div>
                 <code>nmap -T4 -F -sV [target]  # Fast scan command example</code>
             </div>
@@ -303,7 +303,7 @@
         <!-- Slide 5: SSH Audit -->
         <div class="slide">
             <div class="content">
-                <h2>🔐 SSH Credential Audit Module</h2>
+                <h2>SSH Credential Audit Module</h2>
                 <h3>Educational Simulation:</h3>
                 <ul>
                     <li><span class="highlight">Dictionary Generation:</span> Creates 20 unique weak username/password combinations from common defaults</li>
@@ -320,7 +320,7 @@
         <!-- Slide 6: Setup & Conclusion -->
         <div class="slide">
             <div class="content">
-                <h2>🚀 Setup & Key Takeaways</h2>
+                <h2> Setup & Key Takeaways</h2>
                 <h3>Installation & Execution:</h3>
                 <code>pip install streamlit paramiko<br>sudo streamlit run pyres.py</code>
                 
@@ -333,7 +333,7 @@
                 </ul>
                 
                 <div style="margin-top: 30px; text-align: center; font-size: 1.4em; color: #FF5733;">
-                    <strong>Empowering the next generation of cybersecurity professionals</strong>
+                    <strong>Thank You!</strong>
                 </div>
             </div>
         </div>
@@ -384,14 +384,14 @@
             // Slide 1: Title
             let slide1 = pptx.addSlide();
             slide1.background = { color: '1e1e1e' };
-            slide1.addText('🛡️ CypherAudit Toolkit', {
+            slide1.addText(' CypherAudit Toolkit with nmap', {
                 x: 0.5, y: 1.5, w: 9, h: 1.5,
-                fontSize: 54, bold: true, color: 'FF5733',
+                fontSize: 44, bold: true, color: 'FF5733',
                 align: 'center'
             });
-            slide1.addText('Network Security Education Platform', {
+            slide1.addText('SHEMA N GISCARD  2217151', {
                 x: 0.5, y: 3.0, w: 9, h: 0.8,
-                fontSize: 32, color: 'f0f0f0',
+                fontSize: 36, color: '#FFFF00',
                 align: 'center'
             });
             slide1.addText('"The only way to defend against a bad guy with a computer\nis a good guy with a computer"', {
@@ -408,19 +408,19 @@
             // Slide 2: Overview
             let slide2 = pptx.addSlide();
             slide2.background = { color: '1e1e1e' };
-            slide2.addText('📋 Project Overview', {
+            slide2.addText(' Project Overview', {
                 x: 0.5, y: 0.3, w: 9, h: 0.7,
                 fontSize: 44, bold: true, color: 'FF5733'
             });
             slide2.addShape(pptx.ShapeType.rect, {
-                x: 0.5, y: 1.1, w: 9, h: 0.05, fill: { color: 'FF5733' }
+                x: 0.2, y: 0.5, w: 9, h: 0.05, fill: { color: 'FF5733' }
             });
             
             const overviewPoints = [
                 'Purpose: Educational toolkit for Computer Science students to learn network reconnaissance and credential auditing',
                 'Technology Stack: Python 3, Streamlit web framework, Nmap security scanner, Paramiko SSH library',
                 'Key Focus: Hands-on learning of penetration testing fundamentals in a controlled, ethical environment',
-                'Design: Dark-themed, cybersecurity-inspired UI with intuitive tabbed interface'
+                'Visual Design: Allows easy practical navigation and ensures an engaging graphical experience'
             ];
             
             overviewPoints.forEach((point, i) => {
@@ -433,19 +433,19 @@
             // Slide 3: Core Features
             let slide3 = pptx.addSlide();
             slide3.background = { color: '1e1e1e' };
-            slide3.addText('🔧 Core Features', {
+            slide3.addText(' Core Features', {
                 x: 0.5, y: 0.3, w: 9, h: 0.7,
                 fontSize: 44, bold: true, color: 'FF5733'
             });
             slide3.addShape(pptx.ShapeType.rect, {
-                x: 0.5, y: 1.1, w: 9, h: 0.05, fill: { color: 'FF5733' }
+                x: 0.2, y: 0.5, w: 9, h: 0.05, fill: { color: 'FF5733' }
             });
 
             const features = [
-                { title: '🔍 Nmap Scanner', desc: 'Network reconnaissance tool with two scan modes: Fast Scan (top 100 ports) and In-Depth Scan (ports 1-100) with service version detection' },
-                { title: '🗝️ SSH Credential Audit', desc: 'Mock brute-force simulation demonstrating dictionary attacks against SSH services using weak credential pairs' },
-                { title: '📚 Documentation', desc: 'Comprehensive setup guide, usage instructions, and ethical guidelines for responsible security testing' },
-                { title: '🎨 Modern UI', desc: 'Cybersecurity-themed dark interface with custom CSS styling, smooth animations, and clear visual feedback' }
+                { title: ' Nmap Scanner', desc: 'Network reconnaissance tool with two scan modes: Fast Scan (top 100 ports) and In-Depth Scan (ports 1-100) with service version detection' },
+                { title: ' SSH Credential Audit', desc: 'Mock brute-force simulation demonstrating dictionary attacks against SSH services using weak credential pairs' },
+                { title: ' Documentation', desc: 'Comprehensive setup guide, usage instructions, and ethical guidelines for responsible security testing' },
+                { title: ' Modern UI & Slides', desc: 'A dark interface with custom CSS styling, smooth animations, and clear visual feedback' }
             ];
 
             features.forEach((feature, i) => {
@@ -472,7 +472,7 @@
             // Slide 4: Nmap Scanner
             let slide4 = pptx.addSlide();
             slide4.background = { color: '1e1e1e' };
-            slide4.addText('🔎 Nmap Scanner Module', {
+            slide4.addText(' Nmap Scanner Module', {
                 x: 0.5, y: 0.3, w: 9, h: 0.7,
                 fontSize: 44, bold: true, color: 'FF5733'
             });
@@ -501,7 +501,7 @@
                 x: 0.5, y: 4.2, w: 9, h: 0.8,
                 fill: { color: '581845' }
             });
-            slide4.addText('⚠️ Ethical Reminder: Only scan targets you own or have explicit permission to test. Requires sudo privileges.', {
+            slide4.addText(' Ethical Reminder: Only scan targets you own or have explicit permission to test. Requires sudo privileges.', {
                 x: 0.7, y: 4.3, w: 8.6, h: 0.6,
                 fontSize: 16, color: 'FF5733', bold: true
             });
@@ -515,7 +515,7 @@
             // Slide 5: SSH Audit
             let slide5 = pptx.addSlide();
             slide5.background = { color: '1e1e1e' };
-            slide5.addText('🔐 SSH Credential Audit Module', {
+            slide5.addText(' SSH Credential Audit Module', {
                 x: 0.5, y: 0.3, w: 9, h: 0.7,
                 fontSize: 44, bold: true, color: 'FF5733'
             });
@@ -549,7 +549,7 @@
             // Slide 6: Setup & Conclusion
             let slide6 = pptx.addSlide();
             slide6.background = { color: '1e1e1e' };
-            slide6.addText('🚀 Setup & Key Takeaways', {
+            slide6.addText('Setup & Key Takeaways', {
                 x: 0.5, y: 0.3, w: 9, h: 0.7,
                 fontSize: 44, bold: true, color: 'FF5733'
             });
@@ -589,8 +589,7 @@
                 fontSize: 22, color: 'FF5733', bold: true, align: 'center'
             });
 
-            // Save the presentation
-            pptx.writeFile({ fileName: 'CypherAudit_Toolkit_Presentation.pptx' });
+        
         }
 
         // Initialize
