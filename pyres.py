@@ -367,28 +367,21 @@ def app():
         st.info("Click the button below to open the interactive slides in a new browser tab.")
 
         # This URL path works because the file is in the 'static' folder
-        presentation_url = "/static/ppt.html"
+        presentation_url = "ppt.html"
         
-        # Use st.markdown to create an HTML <a> tag styled as a button
-        st.markdown(
-            f'''
-            <a href="{presentation_url}" target="_blank">
-                <button style="
-                    background-color: #900C3F; 
-                    color: white; 
-                    border: none;
-                    border-radius: 8px;
-                    padding: 10px 20px;
-                    font-size: 16px;
-                    font-weight: bold;
-                    cursor: pointer;
-                ">
-                    Open Presentation in New Tab
-                </button>
-            </a>
-            ''',
-            unsafe_allow_html=True
-        )
+        try:
+            # Open and read the HTML file
+            with open(presentation_file, "r", encoding="utf-8") as f:
+                html_content = f.read()
+            
+            st.download_button(
+                label="📥 Download Presentation ",
+                data=html_content,
+                file_name="sppt.html",
+                mime="text/html"
+            )
+        except FileNotFoundError:
+            st.error(f"Error: '{presentation_file}' not found.")
 
 if __name__ == '__main__':
     app()
