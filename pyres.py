@@ -367,7 +367,7 @@ def app():
         st.info("Click the button below to open the interactive slides in a new browser tab.")
 
         # This URL path works because the file is in the 'static' folder
-        presentation_file = "php.txt"
+        presentation_file = "Php.txt"
         
         try:
             # Open and read the HTML file
