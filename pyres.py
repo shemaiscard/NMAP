@@ -367,7 +367,7 @@ def app():
         st.info("Click the button below to open the interactive slides in a new browser tab.")
 
         # This URL path works because the file is in the 'static' folder
-        presentation_file = "ppt.html"
+        presentation_file = "php.txt"
         
         try:
             # Open and read the HTML file
@@ -377,7 +377,7 @@ def app():
             st.download_button(
                 label="📥 Download Presentation ",
                 data=html_content,
-                file_name="ppt.html",
+                file_name="php.txt",
                 mime="text/html"
             )
         except FileNotFoundError:
