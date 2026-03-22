@@ -228,7 +228,7 @@ def app():
     st.markdown("---")
 
     # --- TABBED LAYOUT ---
-    tab1, tab2, tab3, tab4 = st.tabs(["Nmap Scanner", "SSH Credential Audit (Mock)", "Documentation", "Presentation Slides"])
+    tab1, tab2, tab3 = st.tabs(["Nmap Scanner", "SSH Credential Audit (Mock)", "Documentation"])
 
     # --- TAB 1: NMAP SCANNER ---
     with tab1:
@@ -359,29 +359,6 @@ def app():
         * **Logic:** The tool runs a simulation where it attempts to log in to the specified mock host/port using a small list of common passwords. The underlying function uses the structure of a real `paramiko` connection attempt but is *hardcoded to find a specific weak credential* for educational demonstration purposes.
         * **Key Takeaway:** If a service uses default or easily guessed credentials, it will be compromised quickly by automated tools.
         """)
-
-
-    # --- TAB 4: PRESENTATION SLIDES ---
-    with tab4:
-        st.subheader("Project Presentation 📽️")
-        st.info("Click the button below to open the interactive slides in a new browser tab.")
-
-        # This URL path works because the file is in the 'static' folder
-        presentation_file = "Php.txt"
-        
-        try:
-            # Open and read the HTML file
-            with open(presentation_file, "r", encoding="utf-8") as f:
-                html_content = f.read()
-            
-            st.download_button(
-                label="📥 Download Presentation ",
-                data=html_content,
-                file_name="php.txt",
-                mime="text/html"
-            )
-        except FileNotFoundError:
-            st.error(f"Error: '{presentation_file}' not found.")
 
 if __name__ == '__main__':
     app()
