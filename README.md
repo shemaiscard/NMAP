@@ -1,92 +1,53 @@
-NMAP SCANNING TOOL & SSH AUDITOR (EDUCATIONAL)
-==============================================
+# NMAP Scanning Tool & SSH Auditor
 
-A Streamlit-based web application designed for network reconnaissance and educational security auditing. This tool provides a graphical interface for running Nmap scans and demonstrates the logic behind SSH Dictionary Attacks (Brute Force) in a safe, simulated environment.
+**Live Demo:** [nmaptest.streamlit.app](https://nmaptest.streamlit.app)
 
-FEATURES
---------
-* Network Reconnaissance (Nmap):
-    - Fast Scan: Scans the top 100 most common ports using "nmap -F -sV".
-    - In-Depth Scan: Targeted scan of ports 1-100 with service version detection.
-    - Real-time output display in a "Cyber" themed console.
-* SSH Credential Audit (Mock):
-    - Simulates a dictionary attack logic.
-    - Generates random weak username/password pairs.
-    - Demonstrates how automated tools test credentials against a target.
-    - Note: This module is mocked for safety and does not make actual external SSH connections.
-* Educational Resources: Includes a built-in documentation tab and downloadable presentation materials.
-* Modern UI: Custom CSS implementation for a dark, "Hacker/Cyber" aesthetic.
+> **Legal & Ethical Notice:** This tool is for **educational and authorized use only**. Do not scan networks or systems you do not own or have explicit written permission to test. The SSH module is fully mocked — it performs no real intrusion attempts.
 
-PREREQUISITES
--------------
-Since this application is deployed on a Linux Web Server, ensure the following dependencies are met:
+A Streamlit-based GUI for network reconnaissance and educational security auditing, featuring a hacker-themed UI.
 
-1. System Dependencies:
-   You must have Nmap installed on the server backend for the scanner to function.
+## Features
 
-   For Ubuntu/Debian:
-     sudo apt update
-     sudo apt install nmap python3-pip -y
+- **Network Reconnaissance (Nmap)**
+  - Fast Scan: Top 100 ports with service version detection (`nmap -F -sV`)
+  - In-Depth Scan: Ports 1-100 with detailed service info
+  - Real-time output in a cyber-themed console
+- **SSH Credential Audit (Mock)**
+  - Simulates dictionary attack logic using randomly generated weak credentials
+  - Demonstrates automated credential testing concepts safely
+  - No actual SSH connections are made
+- **Educational Resources**: Built-in documentation tab and downloadable materials
 
-   For Fedora/CentOS/RHEL:
-     sudo dnf install nmap python3-pip -y
+## Prerequisites
 
-2. Python Dependencies:
-   The application requires Python 3. Install the required libraries:
-     pip3 install streamlit paramiko
+```bash
+# Ubuntu/Debian
+sudo apt install nmap python3-pip -y
 
-INSTALLATION
-------------
-1. Clone or Upload the Repository:
-   Upload "pyres.py" and any accompanying files (like "Php.txt") to your server directory (e.g., /var/www/nmap-tool or /home/user/app).
+# Fedora/RHEL
+sudo dnf install nmap python3-pip -y
 
-2. Verify Directory Structure:
-   /app-directory
-   
-   |-- pyres.py         # Main application file
-   
-   |-- Php.txt          # Presentation file (Required for Tab 4)
-   
-   |-- readme.txt       # This file
+pip3 install streamlit paramiko
+```
 
-USAGE
------
-1. Running Locally (Development):
-   To run the app on your local machine:
-     streamlit run pyres.py
+## Run Locally
 
-2. Running on Linux Web Server:
-   For the Nmap functionality to work without permission errors, you may need to run the application with elevated privileges or configure Nmap capabilities.
+```bash
+streamlit run pyres.py
+```
 
-   Method A: Running with Sudo (Simplest for Nmap access)
-     sudo streamlit run pyres.py --server.port 8501 --server.address 0.0.0.0
+For Nmap to work without permission errors on Linux:
+```bash
+sudo setcap cap_net_raw,cap_net_admin,cap_net_bind_service+eip $(which nmap)
+```
 
-   Method B: Standard User (Requires Nmap Capabilities)
-   If you do not want to run Streamlit as root, give the Nmap binary raw socket capabilities:
-     sudo setcap cap_net_raw,cap_net_admin,cap_net_bind_service+eip $(which nmap)
-     streamlit run pyres.py --server.port 8501 --server.address 0.0.0.0
+## File Structure
 
-3. Accessing the App:
-   Open your web browser and navigate to:
-   http://<YOUR_SERVER_IP>:8501
+```
+├── pyres.py       # Main application
+├── Php.txt        # Presentation/documentation file
+└── README.md
+```
 
-CONFIGURATION
--------------
-* Port: Default is 8501. To change it, add "--server.port <PORT>" to the run command.
-* Headless Mode: Streamlit automatically detects server environments, but you can force it with "--server.headless true".
-
-* Firewall Note:
-  Ensure your Linux firewall allows traffic on the specified port.
-  Example for UFW (Ubuntu): sudo ufw allow 8501/tcp
-
-LEGAL & ETHICAL DISCLAIMER
---------------------------
-This tool is for EDUCATIONAL PURPOSES ONLY.
-
-1. Authorization: Do not run Nmap scans against IP addresses, domains, or networks that you do not own or have explicit written permission to test.
-2. Liability: The author is not responsible for any misuse of this tool or any damage caused by the use of this software.
-3. Mock Functionality: The SSH module is a simulation meant to teach concepts. It does not perform actual intrusion attempts.
-
-LICENSE
--------
-This project is open-source. Feel free to modify and use it for your cybersecurity studies.
+## License
+Open-source. Free to use for cybersecurity education.
