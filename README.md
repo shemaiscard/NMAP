@@ -1,53 +1,55 @@
-# NMAP Scanning Tool & SSH Auditor
+# NetAudit: Nmap Scanner and SSH Audit Demo
 
-**Live Demo:** [nmaptest.streamlit.app](https://nmaptest.streamlit.app)
+**Live demo:** [nmaptest.streamlit.app](https://nmaptest.streamlit.app)
 
-> **Legal & Ethical Notice:** This tool is for **educational and authorized use only**. Do not scan networks or systems you do not own or have explicit written permission to test. The SSH module is fully mocked — it performs no real intrusion attempts.
+> **Use it legally.** Scan only machines you own or have written permission to test. The SSH part is a simulation and never opens a connection.
 
-A Streamlit-based GUI for network reconnaissance and educational security auditing, featuring a hacker-themed UI.
+A Streamlit app for learning network reconnaissance. It runs real Nmap scans, shows the results in a terminal-style console, and includes a simulated SSH dictionary audit that explains how credential testing works without attacking anything.
 
 ## Features
 
-- **Network Reconnaissance (Nmap)**
-  - Fast Scan: Top 100 ports with service version detection (`nmap -F -sV`)
-  - In-Depth Scan: Ports 1-100 with detailed service info
-  - Real-time output in a cyber-themed console
-- **SSH Credential Audit (Mock)**
-  - Simulates dictionary attack logic using randomly generated weak credentials
-  - Demonstrates automated credential testing concepts safely
-  - No actual SSH connections are made
-- **Educational Resources**: Built-in documentation tab and downloadable materials
+- **Nmap scans** (run through `subprocess`):
+  - Fast scan: the top 100 ports with service detection (`nmap -T4 -F -sV`)
+  - Port range scan: ports 1 to 100 with service detection (`nmap -T4 -p 1-100 -sV`)
+  - Output shown live in the console view
+- **SSH audit (simulated):** generates weak username and password pairs and checks them against a fake target. The Paramiko login code is in the source as comments, so you can see what a real check looks like, but it never runs.
+- **Learning material:** a documentation tab and a downloadable handout.
 
-## Prerequisites
+## Tech stack
 
-```bash
-# Ubuntu/Debian
-sudo apt install nmap python3-pip -y
+| Part | Technology |
+| --- | --- |
+| Language | Python |
+| UI | Streamlit with custom CSS |
+| Scanning | Nmap (`-sV` service detection) |
+| SSH | Paramiko (imported; connection code shown but disabled) |
 
-# Fedora/RHEL
-sudo dnf install nmap python3-pip -y
-
-pip3 install streamlit paramiko
-```
-
-## Run Locally
+## Run locally
 
 ```bash
+# Install Nmap
+sudo apt install nmap        # Ubuntu or Debian
+sudo dnf install nmap        # Fedora or RHEL
+
+pip install -r requirements.txt
 streamlit run pyres.py
 ```
 
-For Nmap to work without permission errors on Linux:
+If Nmap complains about permissions on Linux:
+
 ```bash
 sudo setcap cap_net_raw,cap_net_admin,cap_net_bind_service+eip $(which nmap)
 ```
 
-## File Structure
+## Files
 
-```
-├── pyres.py       # Main application
-├── Php.txt        # Presentation/documentation file
-└── README.md
+```text
+pyres.py           main app
+requirements.txt   Python packages
+packages.txt       system packages for Streamlit Cloud (nmap)
+Php.txt            presentation notes
 ```
 
 ## License
-Open-source. Free to use for cybersecurity education.
+
+See [LICENSE](LICENSE).
